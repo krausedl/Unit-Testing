@@ -59,10 +59,10 @@ class ToDoListItem extends StatelessWidget {
         // but we are looking for aplha .5412 instead of alpha 1.0
         // so look for context somewhere?
         backgroundColor: _getColor(context),
-        child: Text(item.name),
+        child: Text(item.abbrev()),
       ),
       title: Text(
-        item.abbrev(),
+        item.name,
         style: _getTextStyle(context),
       ),
     );
