@@ -13,10 +13,12 @@ import 'package:to_dont_list/objects/item.dart';
 import 'package:to_dont_list/widgets/to_do_items.dart';
 
 void main() {
-  test('Item abbreviation should be first letter', () {
+  test('Item abbreviation is first letter', () {
     const item = Item(name: "add more todos");
     expect(item.abbrev(), "a");
   });
+  // doesnt follow naming convention because we shouldnt used the phrase "should be"
+  // change the name to smth like 'Item abbreviation is first letter'
 
   // Yes, you really need the MaterialApp and Scaffold
   testWidgets('ToDoListItem has a text', (tester) async {
