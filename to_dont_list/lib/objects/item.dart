@@ -5,6 +5,7 @@ class Item {
 
   final String name;
 
+  // make sure that were only using the first letter
   String abbrev() {
     return name.substring(0, 1);
   }

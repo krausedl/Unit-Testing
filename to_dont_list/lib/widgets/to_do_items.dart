@@ -25,15 +25,20 @@ class ToDoListItem extends StatelessWidget {
     // taking place and therefore which theme to use.
 
     return completed //
-        ? Colors.black
+        // should be the right place to change opacity to 54%
+        ? Colors.black54
         : Theme.of(context).primaryColor;
   }
 
+  // context looks like its here, so if we change the color from Colors.black -> Colors.black54 that should change the opacity
+  // but this is the text style, were looking for _getColor ^
   TextStyle? _getTextStyle(BuildContext context) {
     if (!completed) return null;
 
     return const TextStyle(
-      color: Colors.black54,
+      // change opacity
+      // do not change opacity here
+      color: Colors.black,
       decoration: TextDecoration.lineThrough,
     );
   }
@@ -50,6 +55,9 @@ class ToDoListItem extends StatelessWidget {
             }
           : null,
       leading: CircleAvatar(
+        // this is where we get the color
+        // but we are looking for aplha .5412 instead of alpha 1.0
+        // so look for context somewhere?
         backgroundColor: _getColor(context),
         child: Text(item.name),
       ),
