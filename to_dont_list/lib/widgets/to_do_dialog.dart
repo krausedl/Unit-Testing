@@ -40,9 +40,10 @@ class _ToDoDialogState extends State<ToDoDialog> {
       ),
       actions: <Widget>[
         ElevatedButton(
-          key: const Key("OkButton"),
+          // caps mistake
+          key: const Key('CancelButton'),
           style: yesStyle,
-          child: const Text('OK'),
+          child: const Text('Cancel'),
           onPressed: () {
             setState(() {
               Navigator.pop(context);
@@ -51,11 +52,12 @@ class _ToDoDialogState extends State<ToDoDialog> {
         ),
 
         // https://stackoverflow.com/questions/52468987/how-to-turn-disabled-button-into-enabled-button-depending-on-conditions
+        // switch insides of 'ok' and 'cancel' button
         ValueListenableBuilder<TextEditingValue>(
           valueListenable: _inputController,
           builder: (context, value, child) {
             return ElevatedButton(
-              key: const Key("CancelButton"),
+              key: const Key("OKButton"),
               style: noStyle,
               onPressed: value.text.isNotEmpty
                   ? () {
@@ -65,7 +67,7 @@ class _ToDoDialogState extends State<ToDoDialog> {
                       });
                     }
                   : null,
-              child: const Text('Cancel'),
+              child: const Text('OK'),
             );
           },
         ),
