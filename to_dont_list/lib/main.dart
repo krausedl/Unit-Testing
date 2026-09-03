@@ -11,6 +11,9 @@ class ToDoList extends StatefulWidget {
   State createState() => _ToDoListState();
 }
 
+// Stateful widgets always are paried with a state smth
+// type stf for stateful
+// type st for stateless
 class _ToDoListState extends State<ToDoList> {
   final List<Item> items = [const Item(name: "add more todos")];
   final _itemSet = <Item>{};
