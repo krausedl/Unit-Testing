@@ -42,7 +42,8 @@ class _ToDoDialogState extends State<ToDoDialog> {
         ElevatedButton(
           // caps mistake
           key: const Key('CancelButton'),
-          style: yesStyle,
+          // flip button styles
+          style: noStyle,
           child: const Text('Cancel'),
           onPressed: () {
             setState(() {
@@ -58,7 +59,8 @@ class _ToDoDialogState extends State<ToDoDialog> {
           builder: (context, value, child) {
             return ElevatedButton(
               key: const Key("OKButton"),
-              style: noStyle,
+              // flip button styles
+              style: yesStyle,
               onPressed: value.text.isNotEmpty
                   ? () {
                       setState(() {
